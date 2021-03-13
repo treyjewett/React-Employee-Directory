@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import EmployeeContext from "../../utils/employeeContext";
+import API from "../../utils/API";
 
 function Table() {
-    const { employee } = useContext(EmployeeContext);
+    }
     return (
         <table>
             <caption>Employees</caption>
@@ -17,7 +17,7 @@ function Table() {
                 </tr>
             </thead>
             <tbody>
-                {employee.map(employee => (
+                {employees.map(employee => (
                     <tr key={employee.key}>
                         <td><img href={employee.image} alt="Not Provided"></img></td>
                         <td>{employee.first}</td>

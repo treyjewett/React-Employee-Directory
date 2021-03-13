@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const API = () => {
+const getEmployee = () => {
     return new Promise((resolve, reject) => {
         axios
-            .get("https://randomuser.me/api/")
+            .get("https://randomuser.me/api/results=10")
             .then(res => {
                 const employee = res.data;
                 const results = employee.map(employee => {
@@ -24,4 +24,4 @@ const API = () => {
     });
 };
 
-export default API;
+export default getEmployee;

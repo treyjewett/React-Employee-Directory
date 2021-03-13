@@ -1,8 +1,14 @@
 import React from "react";
+import Wrapper from "./components/Wrapper";
+import Header from "./components/Header";
+import Table from "./components/Table";
 
 function App() {
   return (
-    <p>Welcome to the App</p>
+    <Wrapper>
+      <Header />
+      <Table />
+    </Wrapper>
   );
 }
 

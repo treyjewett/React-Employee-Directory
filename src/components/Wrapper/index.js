@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Header";
 import Table from "../Table";
 
-const Container = () => {
+const Wrapper = () => {
     return (
         <div>
             <Header />
@@ -11,4 +11,4 @@ const Container = () => {
     );
 }
 
-export default Container;
+export default Wrapper;

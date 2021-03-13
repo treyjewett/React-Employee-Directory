@@ -1,6 +1,7 @@
 import React from "react";
 
 const EmployeeContext = React.createContext({
+    key: "",
     image: "",
     first: "",
     last: "",
