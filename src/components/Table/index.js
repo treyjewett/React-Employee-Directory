@@ -1,12 +1,25 @@
-import React, { useContext } from "react";
-import API from "../../utils/API";
+import React, { useEffect, useState } from "react";
+import getEmployee from "../../utils/API";
 
 function Table() {
-    }
+    const [table, setTable] = useState([]);
+    // const []
+
+    useEffect(() => {
+        getEmployee().then((results) => {
+            setTable(results);
+            console.log("results: ", results);
+        });
+    }, []);
+
+    useEffect(() => {
+        console.log("table: ", table)
+    }, [table]);
+
     return (
-        <table>
-            <caption>Employees</caption>
+        <table className="table">
             <thead>
+                <header className="tableHead">Employees</header>
                 <tr>
                     <th>Employee Photo</th>
                     <th>First Name</th>
@@ -17,14 +30,26 @@ function Table() {
                 </tr>
             </thead>
             <tbody>
-                {employees.map(employee => (
+                {table.map(employee => (
                     <tr key={employee.key}>
-                        <td><img href={employee.image} alt="Not Provided"></img></td>
-                        <td>{employee.first}</td>
-                        <td>{employee.last}</td>
-                        <td>{employee.age}</td>
-                        <td>{employee.city}</td>
-                        <td>{employee.state}</td>
+                        <td>
+                            <img src={employee.image} alt="Not Provided"></img>
+                        </td>
+                        <td>
+                            {employee.first}
+                        </td>
+                        <td>
+                            {employee.last}
+                        </td>
+                        <td>
+                            {employee.age}
+                        </td>
+                        <td>
+                            {employee.city}
+                        </td>
+                        <td>
+                            {employee.state}
+                        </td>
                     </tr>
                 ))}
             </tbody>

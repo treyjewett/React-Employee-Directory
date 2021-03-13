@@ -5,7 +5,7 @@ import Container from "../components/Wrapper";
 import Table from "../components/Table";
 
 const Directory = () => {
-    const [employee, setEmployee] = useState({});
+    const [employees, setEmployees] = useState({});
 
     useEffect(() => {
         loadEmployees();
@@ -13,14 +13,14 @@ const Directory = () => {
 
     const loadEmployees = () => {
         API.getEmployee()
-        .then(employee => {
-            setEmployee(employee);
+        .then(employees => {
+            setEmployees(employees);
         })
         .catch(err => console.log(err));
     }
 
     return (
-        <EmployeeContext.Provider value={{ employee }}>
+        <EmployeeContext.Provider value={{ employees }}>
             <Container />
             <Table />
         </EmployeeContext.Provider>

@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.tableHead {
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: 145%;
+  margin-right: auto;
+}
+
+.table {
+  text-align: center;
+}
+
+.table td {
+  font-size: 30px;
+}
