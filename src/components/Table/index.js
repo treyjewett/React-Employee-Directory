@@ -8,6 +8,7 @@ function Table() {
 
     useEffect(() => {
         getEmployee().then((results) => {
+            console.log(results);
             setTable(results);
         });
     }, []);
