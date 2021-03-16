@@ -13,7 +13,6 @@ const getEmployee = () => {
                 state: employee.location.state,
             }));
             resolve(results);
-            console.log(results);
         })
         .catch(err => reject(alert(err)));
     })

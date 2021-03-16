@@ -3,28 +3,38 @@ import getEmployee from "../../utils/API";
 
 function Table() {
     const [table, setTable] = useState([]);
-    // const []
 
     useEffect(() => {
         getEmployee().then((results) => {
             setTable(results);
-            console.log("results: ", results);
         });
     }, []);
 
-    useEffect(() => {
-        console.log("table: ", table)
-    }, [table]);
+    // useEffect(() => {
+    //     console.log("table: ", table)
+    // }, [table]);
+
+    const firstSort = () => {
+        
+    }
+
+    const lastSort = (table) => {
+
+    }
+
+    const ageSort = (table) => {
+
+    }
 
     return (
-        <table className="table">
+        <table className="table table-hover">
             <thead>
                 <header className="tableHead">Employees</header>
                 <tr>
                     <th>Employee Photo</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Age</th>
+                    <th>First Name <span className='downArrow fa fa-angle-down' onClick={firstSort()}></span></th>
+                    <th>Last Name <span className='downArrow fa fa-angle-down' onClick={lastSort()}></span></th>
+                    <th>Age <span className='downArrow fa fa-angle-down' onClick={ageSort()}></span></th>
                     <th>City</th>
                     <th>State</th>
                 </tr>
