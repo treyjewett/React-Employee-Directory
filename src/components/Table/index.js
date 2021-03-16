@@ -4,18 +4,20 @@ import getEmployee from "../../utils/API";
 function Table() {
     const [table, setTable] = useState([]);
 
+    const forceUpdate = React.useReducer(() => ({}), {})[1];
+
     useEffect(() => {
         getEmployee().then((results) => {
             setTable(results);
         });
     }, []);
 
-    // useEffect(() => {
-    //     console.log("table: ", table)
-    // }, [table]);
+    useEffect(() => {
+        console.log("table useEffect: ", table)
+    }, [table]);
 
-    const firstSort = () => {
-        table.sort((a, b) => {
+    function firstSort() {
+        let newTable = table.sort((a, b) => {
             if (a.first < b.first) {
                 return -1
             }
@@ -24,10 +26,26 @@ function Table() {
             }
             return 0
         });
+        let choice = prompt('Type "a" for Ascending or "d" for Descending');
+        if (choice === null) {
+            return;
+        } else if (choice !== 'a' && choice !== 'd') {
+            alert('Please enter a valid character!');
+            firstSort();
+        }
+        switch (choice.toLowerCase()) {
+            case 'd':
+                setTable(newTable.reverse());
+                forceUpdate();
+                break;
+            default:
+                setTable(newTable);
+                forceUpdate();
+        }
     };
 
     const lastSort = () => {
-        table.sort((a, b) => {
+        let newTable = table.sort((a, b) => {
             if (a.last < b.last) {
                 return -1
             }
@@ -36,11 +54,26 @@ function Table() {
             }
             return 0
         });
+        let choice = prompt('Type "a" for Ascending or "d" for Descending');
+        if (choice === null) {
+            return;
+        } else if (choice !== 'a' && choice !== 'd') {
+            alert('Please enter a valid character!');
+            lastSort();
+        }
+        switch (choice.toLowerCase()) {
+            case 'd':
+                setTable(newTable.reverse());
+                forceUpdate();
+                break;
+            default:
+                setTable(newTable);
+                forceUpdate();
+        }
     };
 
-
     const ageSort = () => {
-        table.sort((a, b) => {
+        let newTable = table.sort((a, b) => {
             if (a.age < b.age) {
                 return -1
             }
@@ -49,6 +82,22 @@ function Table() {
             }
             return 0
         });
+        let choice = prompt('Type "a" for Ascending or "d" for Descending');
+        if (choice === null) {
+            return;
+        } else if (choice !== 'a' && choice !== 'd') {
+            alert('Please enter a valid character!');
+            ageSort();
+        }
+        switch (choice.toLowerCase()) {
+            case 'd':
+                setTable(newTable.reverse());
+                forceUpdate();
+                break;
+            default:
+                setTable(newTable);
+                forceUpdate();
+        }
     }
 
     return (
@@ -57,9 +106,9 @@ function Table() {
                 <header className="tableHead">Employees</header>
                 <tr>
                     <th>Employee Photo</th>
-                    <th>First Name <span className='downArrow fa fa-angle-down' onClick={() => firstSort()}></span></th>
-                    <th>Last Name <span className='downArrow fa fa-angle-down' onClick={() => lastSort()}></span></th>
-                    <th>Age <span className='downArrow fa fa-angle-down' onClick={() => ageSort()}></span></th>
+                    <th>First Name <button className='downArrow fa fa-angle-down' onClick={() => firstSort()}></button></th>
+                    <th>Last Name <button className='downArrow fa fa-angle-down' onClick={() => lastSort()}></button></th>
+                    <th>Age <button className='downArrow fa fa-angle-down' onClick={() => ageSort()}></button></th>
                     <th>City</th>
                     <th>State</th>
                 </tr>
