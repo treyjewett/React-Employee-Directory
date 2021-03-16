@@ -15,15 +15,40 @@ function Table() {
     // }, [table]);
 
     const firstSort = () => {
-        
-    }
+        table.sort((a, b) => {
+            if (a.first < b.first) {
+                return -1
+            }
+            if (a.first > b.first) {
+                return 1
+            }
+            return 0
+        });
+    };
 
-    const lastSort = (table) => {
+    const lastSort = () => {
+        table.sort((a, b) => {
+            if (a.last < b.last) {
+                return -1
+            }
+            if (a.last > b.last) {
+                return 1
+            }
+            return 0
+        });
+    };
 
-    }
 
-    const ageSort = (table) => {
-
+    const ageSort = () => {
+        table.sort((a, b) => {
+            if (a.age < b.age) {
+                return -1
+            }
+            if (a.age > b.age) {
+                return 1
+            }
+            return 0
+        });
     }
 
     return (
@@ -32,9 +57,9 @@ function Table() {
                 <header className="tableHead">Employees</header>
                 <tr>
                     <th>Employee Photo</th>
-                    <th>First Name <span className='downArrow fa fa-angle-down' onClick={firstSort()}></span></th>
-                    <th>Last Name <span className='downArrow fa fa-angle-down' onClick={lastSort()}></span></th>
-                    <th>Age <span className='downArrow fa fa-angle-down' onClick={ageSort()}></span></th>
+                    <th>First Name <span className='downArrow fa fa-angle-down' onClick={() => firstSort()}></span></th>
+                    <th>Last Name <span className='downArrow fa fa-angle-down' onClick={() => lastSort()}></span></th>
+                    <th>Age <span className='downArrow fa fa-angle-down' onClick={() => ageSort()}></span></th>
                     <th>City</th>
                     <th>State</th>
                 </tr>
