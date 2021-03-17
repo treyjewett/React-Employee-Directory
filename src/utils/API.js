@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getEmployee = () => {
     return new Promise((resolve, reject) => {
-        axios.get("https://randomuser.me/api/?results=20").then(res => {
+        axios.get("https://randomuser.me/api/?results=50").then(res => {
             const results = res.data.results.map(employee => ({
                 key: employee.login.uuid,
                 image: employee.picture.large,

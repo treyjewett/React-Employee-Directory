@@ -12,11 +12,31 @@ code {
     monospace;
 }
 
+.jumbotron {
+  text-align: center;
+}
+
+.search {
+  width: 85%;
+}
+
+.searchLabel {
+  margin-left: 10%;
+  background: lightgrey;
+  border-radius: 7px;
+  padding: 3px;
+}
+
+.form-control {
+  margin-left: 7%;
+}
+
 .tableHead {
   font-size: 50px;
   font-weight: bold;
-  margin-left: 145%;
+  margin-left: 215%;
   margin-right: auto;
+  margin-bottom: 3%;
 }
 
 .table {

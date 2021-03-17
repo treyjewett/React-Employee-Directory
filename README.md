@@ -1,4 +1,58 @@
-# Getting Started with Create React App
+# React Workday Organizer
+
+![badge](https://img.shields.io/static/v1?label=license&message=MIT&color=blue)
+
+A directory app to help view your employees.
+
+## The Project
+
+Employers need the ability to keep track of the employees they have on staff, especially if the company is large. This app is to quickly view them!
+
+## Table of Contents
+- [Code Utilized](#code-utilized:)
+- [What to Expect](#what-to-expect:)
+- [Rendered Website](#rendered-website:)
+- [License](#license:)
+- [Lessons Learned](#lessons-learned:)
+- [More about React](#more-about-react:)
+
+## Code Utilized
+
+This project was constructed using: React | BootStrap | JavaScript | Random User API | CSS.
+
+## What to Expect
+
+When the Directory is loaded:
+- The user will be presented with the title "Employee Directory" with a sub heading letting the user know that this is for navigating employees.
+- Immediately following the title, there is a search bar in which the user can seach for any user by first name.
+- Under the search bar, the table of employees is rendered and a list of 50 employees is shown.
+- The user has the option to sort the table by first name, last name, or age.
+- Once the user clicks the sort button, they will be given a prompt (input 'a' or 'd') to sort the selected column in ascending or descending order, respectively.
+
+## Rendered Website
+
+This application is deployed on GitHub Pages.
+
+<img src="public\assets\img\website.png" alt="Rendered Employee Directory">
+
+To visit the application, please follow the link below:
+
+<a href="https://treyjewett.github.io/React-Employee-Directory/" target ="_blank">View the Employee Directory Here!</a>
+
+## License
+
+This project is using MIT.
+
+## Lessons Learned
+
+I will again reiterate that React is a steep learning curve. I used hooks in this app, which I found very useful and quite handy in the big picture. There is still a lot to learn before I can say that I am comfortable using React, but I am getting there!
+
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+
+# More about React
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

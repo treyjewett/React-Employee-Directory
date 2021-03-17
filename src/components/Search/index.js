@@ -23,7 +23,7 @@ const Search = () => {
     return (
         <form className="search">
             <div className="form-group">
-                <label htmlFor="language">Search Employee:</label>
+                <label className="searchLabel" htmlFor="language">Search Employee:</label>
                 <input
                 value={search}
                 onChange={() => handleInputChange()}
