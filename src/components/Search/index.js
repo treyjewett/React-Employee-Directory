@@ -3,27 +3,30 @@ import getEmployee from "../../utils/API";
 
 
 const Search = () => {
-    // const [search, setSearch] = useState("");
+    const [search, setSearch] = useState("");
 
-    // useEffect(() => {
-    //     if(!search) {
-    //         return;
-    //     }
+    useEffect(() => {
+        if(!search) {
+            return;
+        }
 
-    //     getEmployee(search).then(res => {
-    //         if (res.data.length === 0) {
+        getEmployee(search).then(res => {
+            console.log(res);
+            setSearch(res);
+        })
+    })
 
-    //         }
-    //     })
-    // })
+    const handleInputChange = event => {
+        console.log(search);
+      };
 
     return (
         <form className="search">
             <div className="form-group">
                 <label htmlFor="language">Search Employee:</label>
                 <input
-                value="insert user input here"
-                onChange="tell rect where to handle the changing input"
+                value={search}
+                onChange={() => handleInputChange()}
                 name="employee"
                 list="employeeList"
                 type="text"
