@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/React-Employee-Directory/static/css/main.8aed595a.chunk.css",
-    "main.js": "/React-Employee-Directory/static/js/main.56c848e0.chunk.js",
-    "main.js.map": "/React-Employee-Directory/static/js/main.56c848e0.chunk.js.map",
+    "main.css": "/React-Employee-Directory/static/css/main.e5d63404.chunk.css",
+    "main.js": "/React-Employee-Directory/static/js/main.2a5ab558.chunk.js",
+    "main.js.map": "/React-Employee-Directory/static/js/main.2a5ab558.chunk.js.map",
     "runtime-main.js": "/React-Employee-Directory/static/js/runtime-main.c60e49a8.js",
     "runtime-main.js.map": "/React-Employee-Directory/static/js/runtime-main.c60e49a8.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/React-Employee-Directory/static/css/2.4c97ca4f.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.1aa6c7c0.chunk.js.map": "/React-Employee-Directory/static/js/2.1aa6c7c0.chunk.js.map",
     "index.html": "/React-Employee-Directory/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/React-Employee-Directory/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.8aed595a.chunk.css.map": "/React-Employee-Directory/static/css/main.8aed595a.chunk.css.map",
+    "static/css/main.e5d63404.chunk.css.map": "/React-Employee-Directory/static/css/main.e5d63404.chunk.css.map",
     "static/js/2.1aa6c7c0.chunk.js.LICENSE.txt": "/React-Employee-Directory/static/js/2.1aa6c7c0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c60e49a8.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.1aa6c7c0.chunk.js",
-    "static/css/main.8aed595a.chunk.css",
-    "static/js/main.56c848e0.chunk.js"
+    "static/css/main.e5d63404.chunk.css",
+    "static/js/main.2a5ab558.chunk.js"
   ]
 }
