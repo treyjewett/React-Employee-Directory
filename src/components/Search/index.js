@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from "react";
-import getEmployee from "../../utils/API";
+import React from "react";
 
+const Search = (props) => {
 
-const Search = () => {
-    const [search, setSearch] = useState("");
+    const handleInputChange = (e) => {
+        e.preventDefault();
+        const input = e.target.value.toLowerCase();
+        const existingTable = props.employeeTable;
 
-    useEffect(() => {
-        if(!search) {
-            return;
-        }
+        const filter = existingTable.filter((data) => {
+            const result = data.first + data.last;
+            return result.toLowerCase().includes(input);
+        });
 
-        getEmployee(search).then(res => {
-            console.log(res);
-            setSearch(res);
-        })
-    })
-
-    const handleInputChange = event => {
-        console.log(search);
+        props.updateTable(filter);
       };
 
     return (
@@ -25,10 +20,10 @@ const Search = () => {
             <div className="form-group">
                 <label className="searchLabel" htmlFor="language">Search Employee:</label>
                 <input
-                value={search}
-                onChange={() => handleInputChange()}
+                value={props.input}
+                onChange={(e) => handleInputChange(e)}
                 name="employee"
-                list="employeeList"
+                list="employeeTable"
                 type="text"
                 className="form-control"
                 placeholder="Search by First or Last name!"

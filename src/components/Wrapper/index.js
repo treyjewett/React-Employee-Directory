@@ -1,16 +1,26 @@
-import React from "react";
-import Header from "../Header";
-import Search from "../Search";
+import React, { useEffect, useState } from "react";
+import getEmployee from "../../utils/API";
 import Table from "../Table";
+import Search from "../Search";
 
-const Wrapper = () => {
+function EmployeeCont() {
+    const [table, setTable] = useState([]);
+
+    useEffect(() => {
+        getEmployee().then((results) => {
+            setTable(results);
+        });
+    }, []);
+
+    useEffect(() => {
+    }, [table]);
+
     return (
-        <div>
-            <Header />
-            <Search />
-            <Table />
-        </div>
-    );
-}
+        <>
+            <Search employeeTable={table} updateTable={setTable} />
+            <Table employeeTable={table} updateTable={setTable} />
+        </>
+    )
+};
 
-export default Wrapper;
+export default EmployeeCont

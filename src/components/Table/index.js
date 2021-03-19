@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from "react";
-import getEmployee from "../../utils/API";
+import React from "react";
 
-function Table() {
-    const [table, setTable] = useState([]);
-
+const Table = (props) => {
     const forceUpdate = React.useReducer(() => ({}), {})[1];
 
-    useEffect(() => {
-        getEmployee().then((results) => {
-            console.log(results);
-            setTable(results);
-        });
-    }, []);
-
-    useEffect(() => {
-        console.log("table useEffect: ", table)
-    }, [table]);
-
     function firstSort() {
-        let newTable = table.sort((a, b) => {
+        let newdata = props.employeeTable.sort((a, b) => {
             if (a.first < b.first) {
                 return -1
             }
@@ -36,17 +22,17 @@ function Table() {
         }
         switch (choice.toLowerCase()) {
             case 'd':
-                setTable(newTable.reverse());
+                props.updateTable(newdata.reverse());
                 forceUpdate();
                 break;
             default:
-                setTable(newTable);
+                props.updateTable(newdata);
                 forceUpdate();
         }
     };
 
     const lastSort = () => {
-        let newTable = table.sort((a, b) => {
+        let newdata = props.employeeTable.sort((a, b) => {
             if (a.last < b.last) {
                 return -1
             }
@@ -64,17 +50,17 @@ function Table() {
         }
         switch (choice.toLowerCase()) {
             case 'd':
-                setTable(newTable.reverse());
+                props.updateTable(newdata.reverse());
                 forceUpdate();
                 break;
             default:
-                setTable(newTable);
+                props.updateTable(newdata);
                 forceUpdate();
         }
     };
 
     const ageSort = () => {
-        let newTable = table.sort((a, b) => {
+        let newdata = props.employeeTable.sort((a, b) => {
             if (a.age < b.age) {
                 return -1
             }
@@ -92,11 +78,11 @@ function Table() {
         }
         switch (choice.toLowerCase()) {
             case 'd':
-                setTable(newTable.reverse());
+                props.updateTable(newdata.reverse());
                 forceUpdate();
                 break;
             default:
-                setTable(newTable);
+                props.updateTable(newdata);
                 forceUpdate();
         }
     }
@@ -104,7 +90,9 @@ function Table() {
     return (
         <table className="table table-hover">
             <thead>
-                <header className="tableHead">Employees</header>
+                <tr className="tableHead">
+                    <th>Employees</th>
+                </tr>
                 <tr>
                     <th>Employee Photo</th>
                     <th>First Name <button className='downArrow fa fa-angle-down' onClick={() => firstSort()}></button></th>
@@ -115,7 +103,7 @@ function Table() {
                 </tr>
             </thead>
             <tbody>
-                {table.map(employee => (
+                {props.employeeTable.map(employee => (
                     <tr key={employee.key}>
                         <td>
                             <img src={employee.image} alt="Not Provided"></img>
