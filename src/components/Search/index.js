@@ -6,7 +6,6 @@ const Search = (props) => {
         e.preventDefault();
         const input = e.target.value.toLowerCase();
         const existingTable = props.employeeTable;
-
         const filter = existingTable.filter((data) => {
             const result = data.first + data.last;
             return result.toLowerCase().includes(input);
